@@ -1,0 +1,95 @@
+<html>
+
+	<header>
+
+		<title>This is a test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="jquery-ui/jquery-ui.js"></script>
+		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+		<style type="text/css">
+		
+			.color_Change {color: black;}
+			
+			body {margin: 0; background-color: green; padding: 20px 60px;}
+			
+			#navBar{background-color: black; width: 100%; height: 60px; z-indez: 1;}
+			
+			.habbo{padding: 20px; position: relative; float: left; color: white; z-index: 3;}
+			
+			#mainTitle{width: 100%; text-align: center; color: white; position: absolute; top: 40px; left: 0; z-index: 2;}
+			
+			#mainBody {background-color: red; width: 100%; height: 90%}
+			
+			#fooPic {width: 200px; padding: 20px; float: left;}
+			
+			#textBlock {color: blue; padding: 0px 20px 20px 20px;}
+			
+			h1 {padding: 20px 0px 0px 20px; color: gold;}
+		
+		</style>
+
+	</header>
+	
+	
+
+	<body>
+
+		<div id="navBar">
+			<div class="habbo">
+				<span id="color_Change">Home</span>
+			</div>
+			<div class="habbo">
+				<span id="color_Change2">About</span>
+			</div>
+			<div class="habbo">
+				<span id="color_Change3">Contact</span>
+			</div>
+			<div id="mainTitle">
+				Foo Fighters
+			</div>
+		</div>	
+		<div id="mainBody">
+			<img src="foo.jpg" id="fooPic">
+			<h1>About</h1>
+			<p id="textBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
+
+Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
+
+Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
+
+Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.</p>
+			
+		</div>
+		
+	</body>
+	
+	<script type="text/javascript">
+	
+		$("#color_Change").mouseover( function() {
+			$("#color_Change").css("color", "blue");
+		});
+		
+		$("#color_Change").mouseout( function() {
+			$("#color_Change").css("color", "white");
+		});
+		
+		$("#color_Change2").mouseover( function() {
+			$("#color_Change2").css("color", "blue");
+		});
+		
+		$("#color_Change2").mouseout( function() {
+			$("#color_Change2").css("color", "white");
+		});
+		
+		$("#color_Change3").mouseover( function() {
+			$("#color_Change3").css("color", "blue");
+		});
+		
+		$("#color_Change3").mouseout( function() {
+			$("#color_Change3").css("color", "white");
+		});
+		
+	</script>
+	
+</html>
