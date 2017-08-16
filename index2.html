@@ -6,61 +6,190 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="jquery-ui/jquery-ui.js"></script>
 		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+		<script src="jquery.color.min.js"></script>
+		
 
 		<style type="text/css">
 		
-			.color_Change {color: black;}
+			body {margin: 0; padding: 0; background-color: green;}
 			
-			body {margin: 0; background-color: green; padding: 20px 60px;}
+			#landing {margin: 0; padding: 0; top:0; left: 0; height: 100%; width: 100%; position: relative; overflow: hidden;}
 			
-			#navBar{background-color: black; width: 100%; height: 60px; z-indez: 1;}
+			#welcome { 
+				  height: 100%;
+				  width: 100%;
+				  display: flex;
+				  position: relative;
+				  align-items: center;
+				  justify-content: center;
+				  font-size: 2.5em;
+				  color: white;
+			}
 			
-			.habbo{padding: 20px; position: relative; float: left; color: white; z-index: 3;}
+			video {
+				  min-width: 100%;
+				  min-height: 100%;
+				  width: auto;
+				  height: auto;
+				  position: absolute;
+				  top: 50%;
+				  left: 50%;
+				  transform: translate(-50%,-50%);
+				  filter: grayscale(60%);
+			}
 			
-			#mainTitle{width: 100%; text-align: center; color: white; position: absolute; top: 40px; left: 0; z-index: 2;}
+			#outer-circle  {position: absolute; width: 100px; height: 100px; border-radius: 50%; border-style: solid; border-width: 5px; left: 50%; margin-left: -55px; top: 90%; margin-top: -55px;}
 			
-			#mainBody {background-color: red; width: 100%; height: 90%}
+			#inner-arrow { 
+				position: absolute;
+				width: 20px;
+				height: 20px;
+			    border-style: solid;
+				border-width: 0 5px 5px 0;
+				display: inline-block;
+				padding: 3px;
+				transform: rotate(45deg);
+				-webkit-transform: rotate(45deg);
+				left: 50%;
+				margin-left: -15px;
+				top: 50%;
+				margin-top: -20px;
+			}
 			
-			#fooPic {width: 200px; padding: 20px; float: left;}
+			.button-light {
+				border-color: white;
+			}
 			
-			#textBlock {color: blue; padding: 0px 20px 20px 20px;}
+			#navBar {background-color: black; width: 100%; height: 60px; z-index: 11111; float: left; position: fixed; clear: both; }
 			
-			h1 {padding: 20px 0px 0px 20px; color: gold;}
+			.navbar-fixed-top {
+				position: fixed;
+			}
+			
+			#menu{top: 60px; position: absolute; float: left; background-color: black; padding: 20px; opacity: 0.8; display: none;}
+			
+			.habbo{padding: 0px 20px; float: left; color: white; z-index: 40;  border-right: 2px solid white;}
+			
+			#last{border: none}
+			
+			#mainTitle{width: 100%; text-align: center; color: white; position: absolute; top: 21px; left: 0; z-index: 33;}
+			
+			#mainBody {background-color: red; width: 80%; margin: 0 auto; }
+			
+			#fooPic {width: 200px; padding: 80px 20px 20px 70px; float: left; z-index: 3}
+			
+			#textBlock {color: blue; padding: 0px 70px 20px 70px;}
+			
+			#about {padding: 20px 0px 0px 20px; color: gold;}
+			
+			#arrow-right { width: 0px; height: 0; border-top: 20 px solid transparent; border-bottom: 20px solid transparent;
+							border-left: 20px solid green; position: absolute; top: 10px; left: 10px;}
 		
 		</style>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		
+		
 
 	</header>
 	
 	
 
 	<body>
-
 		<div id="navBar">
-			<div class="habbo">
-				<span id="color_Change">Home</span>
-			</div>
-			<div class="habbo">
-				<span id="color_Change2">About</span>
-			</div>
-			<div class="habbo">
-				<span id="color_Change3">Contact</span>
-			</div>
+			<div id="arrow-right"></div>
 			<div id="mainTitle">
-				Foo Fighters
+				<span id="foo_fighter">Foo Fighters</span>
+			</div>
+			<div id="menu">
+				<div class="habbo">
+					<span id="color_Change">Home</span>
+				</div>
+				<div class="habbo">
+					<span id="color_Change2">About</span>
+				</div>
+				<div class="habbo" id="last">
+					<span id="color_Change3">Contact</span>
+				</div>
 			</div>
 		</div>	
-		<div id="mainBody">
-			<img src="foo.jpg" id="fooPic">
-			<h1>About</h1>
-			<p id="textBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
-
-Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
-
-Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
-
-Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.</p>
-			
+		<div id="landing">
+			<video id="sey" src="seydrone.mp4#t=57,286" preload="auto" autoplay="true" muted="muted" loop="loop" type="video/mp4"></video>
+			<span id="welcome">DISCOVER NATURE'S SECRETS</span>
+			<a href="#mainBody">
+				<div id="outer-circle" class="button-light" href="#navBar">
+					<div id="inner-arrow" class="button-light"></div>
+				</div>
+			</a>
 		</div>
+		
+		
+		<div id="mainBody">
+				
+			
+			<div id="inner-body">
+					<img src="foo.jpg" id="fooPic">
+					<h1 id="about">About</h1>
+					<p id="textBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
+
+		Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
+
+		Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
+
+		Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
+
+		Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
+
+		Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
+
+		Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
+
+		Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
+
+		Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
+
+		Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
+
+		Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
+
+		Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
+
+		Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
+
+		Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
+
+		Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
+
+		Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
+
+		Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
+
+		Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
+
+		Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
+
+		Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
+
+		Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
+
+		Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
+
+		Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
+
+		Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
+
+		Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin elit. In pellentesque nibh vitae tincidunt auctor. Cras ut arcu eget magna mollis euismod. Integer non est tincidunt, consectetur sem ut, porta nisl. Praesent egestas vitae libero nec dapibus. Aliquam vel neque bibendum, commodo justo sed, maximus arcu. Nam tempus ac lorem a tempus.
+
+		Quisque lobortis tellus non nisi aliquam imperdiet. Etiam tristique tellus in imperdiet aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut dapibus neque ut arcu consequat lobortis. Cras suscipit ex finibus ex vulputate tempus. Nullam semper turpis at diam laoreet, quis egestas est tempor. Vivamus nec odio at sapien laoreet malesuada sit amet ac justo.
+
+		Curabitur a quam ipsum. Etiam faucibus ornare sapien eget faucibus. Duis non blandit metus. Maecenas metus lectus, elementum eget massa iaculis, interdum tincidunt diam. Nulla facilisi. Cras tincidunt volutpat velit, et pellentesque elit tempus ullamcorper. Etiam venenatis quis nunc nec tempor. Proin feugiat eros eu nulla sagittis, sed scelerisque purus hendrerit. Mauris ut sodales nulla, eu rutrum ante. Suspendisse accumsan lorem at quam posuere interdum vel sit amet purus. In facilisis tempor scelerisque.
+
+		Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices lorem id velit auctor imperdiet. Morbi viverra convallis suscipit. Fusce porttitor massa vel convallis sagittis. Praesent sed est sagittis, tincidunt elit eget, hendrerit risus. Nunc congue urna sed interdum aliquet. Donec ultricies tortor ac ex placerat vulputate.</p>
+			</div>
+		</div>
+		
+		
+		
 		
 	</body>
 	
@@ -89,6 +218,58 @@ Proin laoreet lorem id dapibus consectetur. Lorem ipsum dolor sit amet, consecte
 		$("#color_Change3").mouseout( function() {
 			$("#color_Change3").css("color", "white");
 		});
+		
+		$( "#arrow-right" ).click(function() {
+			$( "#menu").slideToggle("medium");
+		});
+		
+		$(".button-light").mouseover( function() {
+			$(".button-light").css("border-color", "yellow");
+		});
+		
+		$(".button-light").mouseout( function() {
+			$(".button-light").css("border-color", "white");
+		});
+		
+		$(document).ready(function(){
+		  // Add smooth scrolling to all links
+		  $("a").on('click', function(event) {
+
+			// Make sure this.hash has a value before overriding default behavior
+			if (this.hash !== "") {
+			  // Prevent default anchor click behavior
+			  event.preventDefault();
+
+			  // Store hash
+			  var hash = this.hash;
+
+			  // Using jQuery's animate() method to add smooth page scroll
+			  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			  $('html, body').animate({
+				scrollTop: $(hash).offset().top
+			  }, 800, function(){
+		   
+				// Add hash (#) to URL when done scrolling (default click behavior)
+				window.location.hash = hash;
+				
+			  });
+			} // End if
+		  });
+		});
+		
+		$("#arrow-right").mouseover( function() {
+			$("#arrow-right").css("border-left", "20px solid white");
+		});
+		
+		$("#arrow-right").mouseout( function() {
+			$("#arrow-right").css("border-left", "20px solid green");
+		});
+		
+		
+		
+		
+		
+		
 		
 	</script>
 	
